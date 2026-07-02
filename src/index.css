@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Premium Brand Colors */
+  --color-pmpi-blue-950: #051A3B;
+  --color-pmpi-blue-900: #0B3B82;
+  --color-pmpi-blue-800: #104FA8;
+  --color-pmpi-blue-600: #1E75E6;
+  --color-pmpi-blue-400: #60A5FA;
+  --color-pmpi-gold-600: #D9A030;
+  --color-pmpi-gold-500: #F5C25D;
+  --color-pmpi-gold-400: #F9D88B;
+  --color-pmpi-gold-300: #FCE8BD;
+  
+  --color-brand-dark: #020917;
+  --color-brand-card: #05142b;
+  --color-brand-border: #0e213b;
+}
+
+@layer utilities {
+  .glass-premium {
+    background: rgba(5, 20, 43, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(245, 194, 93, 0.15);
+  }
+  
+  .glass-light {
+    background: rgba(5, 20, 43, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(245, 194, 93, 0.15);
+  }
+
+  .text-glow-blue {
+    text-shadow: 0 0 20px rgba(30, 117, 230, 0.15);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, #F5C25D 0%, #D9A030 100%);
+  }
+
+  .gold-text-gradient {
+    background: linear-gradient(135deg, #F9D88B 0%, #F5C25D 50%, #D9A030 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .blue-gradient {
+    background: linear-gradient(135deg, #0B3B82 0%, #1E75E6 100%);
+  }
+
+  .brand-text-gradient {
+    background: linear-gradient(135deg, #F9D88B 0%, #F5C25D 50%, #D9A030 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Custom subtle pulse */
+  @keyframes ripple {
+    0% {
+      transform: scale(0.95);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(0.95);
+      opacity: 0.5;
+    }
+  }
+
+  .animate-ripple {
+    animation: ripple 3s ease-in-out infinite;
+  }
+}
+
+/* Base resets & custom scrollbar */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020917;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0B3B82;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F5C25D;
+}

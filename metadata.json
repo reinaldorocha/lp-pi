@@ -1,0 +1,6 @@
+{
+  "name": "Legislação PMPI Bizurada",
+  "description": "Landing Page Premium e Interativa para o curso Legislação Institucional da PMPI Bizurada.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
