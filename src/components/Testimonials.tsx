@@ -1,62 +1,55 @@
 import React from "react";
-import { Star, MessageSquareCode, ShieldCheck } from "lucide-react";
-import { Testimony } from "../types";
+import { Star, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function Testimonials() {
-  const reviews: Testimony[] = [
+  const reviews = [
     {
       id: 1,
       name: "Renato Sousa",
       role: "Aprovado PMPI / Teresina - PI",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
-      rating: 5,
-      text: "Excelente didática. Estava com muita dificuldade no Estatuto da PMPI, pois a redação da lei seca de 1981 é super confusa. Os esquemas do curso abriram minha mente de um jeito único."
+      text: "Excelente didática. Eu tinha muita dificuldade em memorizar o Estatuto da PMPI porque a lei de 1981 é super confusa. Os esquemas e mnemônicos do curso abriram minha mente de um jeito único. Fui aprovado!"
     },
     {
       id: 2,
       name: "Mariana Cavalcante",
-      role: "Estudante Carreiras Policiais / Picos - PI",
+      role: "Classificada PMPI / Picos - PI",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
-      rating: 5,
-      text: "Material muito organizado. O cronograma de 4 semanas é perfeito para quem trabalha o dia todo igual a mim. Você sabe exatamente o que precisa estudar cada dia sem perder tempo."
+      text: "Material extremamente organizado. O cronograma do curso é perfeito para quem trabalha o dia todo e tem poucas horas livres. Você estuda o que realmente cai, sem perder tempo com enrolações."
     },
     {
       id: 3,
       name: "Jefferson Lima",
       role: "Concurseiro PMPI / Parnaíba - PI",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80",
-      rating: 5,
-      text: "Finalmente consegui entender a legislação! O professor explica artigo por artigo e destaca as principais pegadinhas. As questões simuladas com gabarito comentado ajudam demais na fixação."
+      text: "Finalmente consegui compreender a legislação sem precisar decorar tudo. O professor explica os principais prazos e competências de forma esquematizada. As questões comentadas ajudaram demais!"
     },
     {
       id: 4,
       name: "Camila Guimarães",
       role: "Focada em Segurança Pública / Floriano - PI",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80",
-      rating: 5,
-      text: "As atualizações de 2024 e o Decreto 27.156 foram o grande diferencial para mim. Outros cursos nem comentam estas novidades e a banca certamente vai focar nelas. Recomendo fortemente!"
+      text: "A nova Lei Orgânica de 2022 e os regulamentos recentes foram o grande diferencial. Outros cursinhos genéricos ignoram estes detalhes e a banca foca justamente neles. Vale cada centavo!"
     }
   ];
 
   return (
     <section 
       id="depoimentos"
-      className="py-24 bg-brand-dark border-t border-slate-900 relative"
+      className="py-24 bg-slate-950 border-t border-slate-900 relative overflow-hidden text-slate-100"
     >
-      <div className="absolute top-0 right-10 w-64 h-64 bg-pmpi-gold-500/5 rounded-full filter blur-[100px] pointer-events-none"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs font-bold text-pmpi-gold-400 tracking-widest uppercase bg-pmpi-gold-500/10 border border-pmpi-gold-500/25 px-3 py-1 rounded-full">
-            RESULTADOS REAIS E DEPOIMENTOS
+          <span className="font-mono text-xs font-bold text-pmpi-orange-500 tracking-widest uppercase bg-pmpi-orange-500/10 border border-pmpi-orange-500/20 px-3.5 py-1.5 rounded-full">
+            QUEM USA, RECOMENDA
           </span>
-          <h2 className="font-display font-black text-3xl sm:text-4xl text-white mt-4 tracking-tight">
-            O Que Dizem Nossos Alunos
+          <h2 className="font-display font-black text-3xl sm:text-4xl text-white mt-4 tracking-tight leading-tight">
+            Prova social de concurseiros reais
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
-            Comprove como concurseiros de todo o Piauí estão superando as dificuldades da legislação e garantindo vantagem competitiva na prova.
+            Veja o depoimento sincero de quem usou o nosso método simplificado para superar o bloqueio com as leis secas e conquistar o diferencial competitivo na prova.
           </p>
         </div>
 
@@ -65,14 +58,16 @@ export default function Testimonials() {
           {reviews.map((rev) => (
             <div 
               key={rev.id}
-              className="bg-brand-card border border-brand-border rounded-2xl p-6 flex flex-col justify-between hover:border-pmpi-gold-500/40 shadow-md transition-all duration-300"
+              className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-750 shadow-lg transition-all duration-300"
             >
               <div>
                 {/* Rating Stars */}
-                <div className="flex items-center gap-1 mb-4 text-pmpi-gold-500">
-                  {Array.from({ length: rev.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-pmpi-gold-500 text-pmpi-gold-500" />
-                  ))}
+                <div className="flex items-center gap-1 mb-4 text-pmpi-orange-500">
+                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
+                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
+                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
+                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
+                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
                 </div>
 
                 {/* Text */}
@@ -82,28 +77,46 @@ export default function Testimonials() {
               </div>
 
               {/* User profile details */}
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-850">
+              <div className="flex items-center gap-3 pt-4 border-t border-slate-800">
                 <img
-                  className="h-9 w-9 rounded-full object-cover ring-2 ring-pmpi-gold-500/50"
+                  className="h-9 w-9 rounded-full object-cover ring-2 ring-slate-800"
                   src={rev.avatar}
                   alt={rev.name}
                   referrerPolicy="no-referrer"
                 />
                 <div>
-                  <h4 className="font-display font-bold text-xs sm:text-sm text-white">{rev.name}</h4>
-                  <p className="text-[10px] text-slate-400 mt-0.5">{rev.role}</p>
+                  <h4 className="font-display font-bold text-xs sm:text-sm text-slate-100">{rev.name}</h4>
+                  <p className="text-[10px] text-slate-450 mt-0.5 font-medium">{rev.role}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Dynamic Social Proof Stat inside reviews */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 bg-pmpi-gold-500/10 border border-pmpi-gold-500/25 rounded-full px-5 py-2 text-xs text-pmpi-gold-400 font-mono">
-            <ShieldCheck className="w-4 h-4 text-pmpi-gold-500 shrink-0" />
-            <span>Satisfação de <strong className="text-white font-bold">98.4%</strong> baseada em feedbacks internos de simulados.</span>
+        {/* Satisfaction Rating Badge */}
+        <div className="mt-12 flex justify-center">
+          <div className="inline-flex items-center gap-2 bg-emerald-950/30 border border-emerald-900/50 rounded-full px-5 py-2.5 text-xs text-emerald-400 font-sans font-semibold shadow-sm">
+            <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
+            <span>Taxa de satisfação de <strong>98.4%</strong> entre nossos alunos ativos</span>
           </div>
+        </div>
+
+        {/* Repeated CTA Block */}
+        <div className="mt-16 flex flex-col items-center justify-center gap-4 text-center">
+          <button
+            onClick={() => {
+              const element = document.getElementById("valores");
+              if (element) element.scrollIntoView({ behavior: "smooth" });
+            }}
+            id="testimonials-cta-button"
+            className="font-display font-bold text-base text-white py-4 px-10 rounded-full bg-gradient-to-r from-pmpi-orange-500 to-pmpi-orange-600 hover:brightness-110 shadow-lg shadow-pmpi-orange-500/20 hover:scale-103 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            QUERO COMEÇAR AGORA
+            <ArrowRight className="w-5 h-5" />
+          </button>
+          <span className="text-[11px] text-slate-550 font-mono">
+            ★ Junte-se a centenas de futuros soldados e oficiais da PMPI
+          </span>
         </div>
 
       </div>

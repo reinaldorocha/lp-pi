@@ -1,136 +1,99 @@
-import React, { useState } from "react";
-import { User, Briefcase, Award, AlertCircle, Clock, CheckSquare } from "lucide-react";
+import React from "react";
+import { Check, ArrowRight, Compass, Shield, BookOpen, Clock } from "lucide-react";
 
 export default function ForWhom() {
-  const [selectedProfile, setSelectedProfile] = useState<number>(0);
-
-  const profiles = [
+  const targets = [
     {
-      title: "Está Começando do Zero",
-      subtitle: "Iniciantes no concurso da PMPI",
-      icon: User,
-      pain: "A legislação institucional piauiense parece um emaranhado complexo de leis estaduais, decretos e siglas incompreensíveis.",
-      solution: "Nosso curso explica tudo a partir da base, traduzindo termos jurídicos e estruturando os conceitos em esquemas lógicos passo a passo."
+      title: "Quem vai iniciar",
+      description: "Comece do zero absoluto com explicações traduzidas do 'juridiquês' para uma linguagem simples, lógica e de fácil memorização.",
+      icon: Compass,
     },
     {
-      title: "Trabalha e Estuda",
-      subtitle: "Tempo escasso e rotinas densas",
-      icon: Briefcase,
-      pain: "Voltar do trabalho cansado e ter que ler 150 páginas de lei seca sem entender o que é mais cobrado pelas bancas organizadoras.",
-      solution: "Aulas cirúrgicas de 10 minutos, áudios focados, mapas mentais prontos e PDFs ultra-resumidos para otimizar cada minuto livre."
+      title: "Quem já estuda",
+      description: "Destrave seu desempenho dominando as principais pegadinhas das bancas, exceções legais e as novidades normativas de 2024.",
+      icon: Shield,
     },
     {
-      title: "Já foi Reprovado em Concursos",
-      subtitle: "Buscando ajustar os detalhes",
-      icon: AlertCircle,
-      pain: "Ficar de fora das vagas ou da redação por causa de apenas 2 ou 3 questões de Legislação que acabaram pesando na nota final.",
-      solution: "Foco absoluto em pegadinhas, exceções legais e novidades (como as leis de 2024), garantindo os pontos que te colocarão dentro das vagas."
+      title: "Quem quer revisar",
+      description: "Ganhe velocidade e fixe os prazos, hierarquias e competências críticas através de nossos mapas de véspera e bizus consolidados.",
+      icon: BookOpen,
     },
     {
-      title: "Quer Organizar os Estudos",
-      subtitle: "Estudantes em busca de direcionamento",
-      icon: CheckSquare,
-      pain: "Perder horas organizando pastas, conferindo se a lei na internet está atualizada ou se determinado decreto foi revogado.",
-      solution: "Tópicos de estudo focados estritamente no edital, com materiais consolidados e 100% atualizados para você apenas sentar e estudar."
+      title: "Quem tem pouco tempo",
+      description: "Aproveite cada minuto do seu dia com videoaulas curtas de 15 minutos que se adaptam à rotina de quem trabalha e estuda.",
+      icon: Clock,
     }
   ];
 
   return (
     <section 
       id="para-quem"
-      className="py-24 bg-brand-dark border-t border-slate-900 relative"
+      className="py-24 bg-slate-950 border-t border-slate-900 relative overflow-hidden text-slate-100"
     >
-      <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-pmpi-gold-500/5 rounded-full filter blur-[120px] pointer-events-none"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs font-bold text-pmpi-gold-400 tracking-widest uppercase bg-pmpi-gold-500/10 border border-pmpi-gold-500/25 px-3 py-1 rounded-full">
-            PARA QUEM É O CURSO?
+          <span className="font-mono text-xs font-bold text-pmpi-orange-500 tracking-widest uppercase bg-pmpi-orange-500/10 border border-pmpi-orange-500/20 px-3.5 py-1.5 rounded-full">
+            SERÁ QUE É PARA VOCÊ?
           </span>
-          <h2 className="font-display font-black text-3xl sm:text-4xl text-white mt-4 tracking-tight">
-            Identifique Seu Perfil de Preparação
+          <h2 className="font-display font-black text-3xl sm:text-4xl text-white mt-4 tracking-tight leading-tight">
+            Idealizado para todos os níveis de preparação
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
-            Nós entendemos as dificuldades de preparar-se para carreiras policiais. Desenvolvemos o material para sanar as dores de diferentes realidades de estudo.
+            Independentemente de como está a sua rotina atual de estudos, nosso método foi desenhado para maximizar a sua retenção de conteúdo com o menor esforço possível.
           </p>
         </div>
 
-        {/* Profile Grid Layout with Selector Interaction */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
-          {/* Selector List - Left Column */}
-          <div className="lg:col-span-5 flex flex-col gap-3 justify-center">
-            {profiles.map((profile, index) => {
-               const Icon = profile.icon;
-               const isSelected = selectedProfile === index;
-               return (
-                 <button
-                   key={index}
-                   onClick={() => setSelectedProfile(index)}
-                   id={`profile-selector-button-${index}`}
-                   className={`w-full text-left p-4 rounded-xl border transition-all cursor-pointer flex items-center gap-4 ${
-                     isSelected 
-                       ? "bg-brand-card border-pmpi-gold-500/60 shadow-md" 
-                       : "bg-brand-card/30 border-slate-900 hover:border-slate-800 hover:bg-brand-card/60"
-                   }`}
-                 >
-                   <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
-                     isSelected ? "bg-pmpi-gold-500 text-slate-950" : "bg-slate-900 text-slate-400"
-                   }`}>
-                     <Icon className="w-5 h-5" />
-                   </div>
-                   <div>
-                     <h4 className="font-display font-bold text-sm sm:text-base text-slate-100">
-                       {profile.title}
-                     </h4>
-                     <p className="text-[11px] text-slate-400 mt-0.5">{profile.subtitle}</p>
-                   </div>
-                 </button>
-               );
-            })}
-          </div>
+        {/* Bento-style targets grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {targets.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div 
+                key={index}
+                className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-md hover:shadow-lg hover:border-slate-750 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center gap-2 text-pmpi-orange-500 mb-4">
+                    <Check className="w-5 h-5 shrink-0" />
+                    <span className="font-mono text-xs font-bold uppercase tracking-wider">Ideal para</span>
+                  </div>
+                  
+                  <h3 className="font-display font-black text-lg text-white mb-3">
+                    {item.title}
+                  </h3>
+                  
+                  <p className="font-sans text-xs sm:text-sm text-slate-400 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
 
-          {/* Solution Focus Card - Right Column */}
-          <div className="lg:col-span-7 bg-brand-card border border-brand-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-xl">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-pmpi-gold-500/5 rounded-full filter blur-xl"></div>
-            
-            {/* Displaying selected profile details */}
-            <div className="flex-1 flex flex-col justify-center">
-              <span className="font-mono text-[9px] font-bold text-pmpi-gold-400 uppercase tracking-widest block mb-4">
-                Como nos adaptamos a você:
-              </span>
-
-              <h3 className="font-display font-black text-xl sm:text-2xl text-white mb-6">
-                {profiles[selectedProfile].title}
-              </h3>
-
-              {/* Pain Point */}
-              <div className="mb-6 pb-6 border-b border-slate-900">
-                <span className="text-[10px] text-rose-400 font-sans font-bold uppercase tracking-wider block mb-2">❌ O Obstáculo Comum:</span>
-                <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {profiles[selectedProfile].pain}
-                </p>
+                <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-2 text-[10px] text-slate-500 font-mono">
+                  <Icon className="w-4 h-4 text-slate-500" />
+                  <span>Método 100% Compatível</span>
+                </div>
               </div>
+            );
+          })}
+        </div>
 
-              {/* Solution */}
-              <div>
-                <span className="text-[10px] text-emerald-400 font-sans font-bold uppercase tracking-wider block mb-2">✔ Nossa Solução Bizurada:</span>
-                <p className="font-sans text-xs sm:text-sm text-slate-200 leading-relaxed">
-                  {profiles[selectedProfile].solution}
-                </p>
-              </div>
-            </div>
-
-            {/* Micro reassurance badge */}
-            <div className="mt-8 pt-6 border-t border-slate-900 flex items-center gap-2.5 text-xs text-slate-400 font-mono">
-              <Clock className="w-4 h-4 text-pmpi-gold-500 shrink-0" />
-              <span>O curso se molda à sua disponibilidade, independentemente do tempo diário.</span>
-            </div>
-
-          </div>
-
+        {/* Repeated CTA button */}
+        <div className="mt-16 flex flex-col items-center justify-center gap-4 text-center">
+          <button
+            onClick={() => {
+              const element = document.getElementById("valores");
+              if (element) element.scrollIntoView({ behavior: "smooth" });
+            }}
+            id="forwhom-cta-button"
+            className="font-display font-bold text-base text-white py-4 px-10 rounded-full bg-gradient-to-r from-pmpi-orange-500 to-pmpi-orange-600 hover:brightness-110 shadow-lg shadow-pmpi-orange-500/20 hover:scale-103 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            QUERO COMEÇAR AGORA
+            <ArrowRight className="w-5 h-5" />
+          </button>
+          <span className="text-[11px] text-slate-500 font-mono">
+            ★ Comece a estudar agora mesmo pelo computador ou celular
+          </span>
         </div>
 
       </div>

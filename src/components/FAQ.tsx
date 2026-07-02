@@ -1,45 +1,39 @@
 import React, { useState } from "react";
-import { Plus, Minus, HelpCircle } from "lucide-react";
-import { FAQItem } from "../types";
+import { Plus, Minus, HelpCircle, ArrowRight } from "lucide-react";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const faqs: FAQItem[] = [
+  const faqs = [
     {
       id: 1,
       question: "Como recebo o acesso ao curso?",
-      answer: "A liberação é imediata. Assim que o pagamento (seja via Pix ou Cartão de Crédito) for aprovado, nossa plataforma envia automaticamente um e-mail com suas credenciais de login e link de acesso. Se pagar por Boleto, a compensação pode levar até 48 horas úteis."
+      answer: "A liberação é imediata. Assim que o pagamento (via Pix ou Cartão de Crédito) for confirmado, nossa plataforma envia automaticamente um e-mail com suas credenciais de login e o link de acesso seguro à nossa área de membros."
     },
     {
       id: 2,
-      question: "O curso oferece certificado de conclusão?",
-      answer: "Sim! Ao concluir a visualização das videoaulas e marcar os checklists dos módulos, a plataforma emite automaticamente um certificado digital de 40 horas letivas, comprovando sua capacitação na Legislação Institucional da PMPI."
+      question: "As aulas ficam gravadas? Posso assistir no meu tempo?",
+      answer: "Sim, todas as videoaulas são gravadas e ficam inteiramente disponíveis na área de membros 24 horas por dia. Você estuda no seu próprio ritmo, podendo rever as aulas sempre que precisar."
     },
     {
       id: 3,
-      question: "Posso assistir às videoaulas pelo celular?",
-      answer: "Com certeza. Nossa plataforma é totalmente responsiva e otimizada para dispositivos móveis. Você pode assistir às videoaulas, fazer o download dos resumos em PDF e mapas mentais, além de resolver questões diretamente pelo seu celular ou tablet."
+      question: "Consigo assistir às aulas pelo celular?",
+      answer: "Com certeza. A área de membros é 100% responsiva e perfeitamente otimizada para smartphones, tablets e computadores. Você estuda onde estiver, sem dificuldades de navegação."
     },
     {
       id: 4,
-      question: "As aulas ficam gravadas? Posso assistir quantas vezes quiser?",
-      answer: "Sim, todas as aulas são gravadas e ficam disponíveis 24 horas por dia. Você possui total flexibilidade para assistir no seu ritmo, repetir os vídeos que tiver mais dificuldades e pausar quando desejar fazer anotações."
+      question: "O material está atualizado com as leis recentes?",
+      answer: "Totalmente atualizado. O curso abrange a nova Lei de Organização Básica (LOB - Lei nº 7.725/2022), o Estatuto da PMPI, o Código de Ética (LC nº 28/2003) e as alterações mais recentes de 2024."
     },
     {
       id: 5,
-      question: "O material está atualizado com as leis recentes?",
-      answer: "Totalmente. Nosso material contempla a nova Lei de Organização Básica (Lei nº 7.725/2022), o Sistema de Proteção Social (Lei nº 7.772/2022), as alterações recentes de 2024 (Lei nº 8.430) e os novos regulamentos aprovados por decretos em 2024."
+      question: "Quanto tempo de acesso eu terei ao curso?",
+      answer: "Você terá acesso integral por 12 meses (1 ano). Esse prazo é mais do que suficiente para você assistir a todas as aulas, revisar com os bizus e consolidar o conteúdo até o dia da prova."
     },
     {
       id: 6,
-      question: "Quanto tempo de acesso eu terei ao curso?",
-      answer: "Você terá acesso garantido por 1 ano completo (12 meses). Isso garante que você poderá estudar tranquilamente durante toda a preparação do concurso atual e revisar caso ocorra qualquer imprevisto com o cronograma de provas."
-    },
-    {
-      id: 7,
       question: "Como funciona o suporte para tirar dúvidas?",
-      answer: "Embaixo de cada videoaula há uma seção exclusiva para comentários. Além disso, os alunos têm suporte técnico e pedagógico direto via e-mail e acesso à nossa comunidade exclusiva de alunos no Telegram/WhatsApp para discussões construtivas."
+      answer: "Você pode deixar suas dúvidas na área de membros, logo abaixo de cada videoaula. Nossa equipe pedagógica analisa e responde a cada comentário de forma rápida e direta."
     }
   ];
 
@@ -50,60 +44,58 @@ export default function FAQ() {
   return (
     <section 
       id="faq"
-      className="py-24 bg-brand-dark border-t border-slate-900 relative"
+      className="py-24 bg-slate-900 border-t border-slate-950 relative overflow-hidden text-slate-100"
     >
-      <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-pmpi-gold-500/5 rounded-full filter blur-[120px] pointer-events-none"></div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 w-full">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs font-bold text-pmpi-gold-400 tracking-widest uppercase bg-pmpi-gold-500/10 border border-pmpi-gold-500/25 px-3 py-1 rounded-full">
+        <div className="text-center mb-16 max-w-2xl mx-auto">
+          <span className="font-mono text-xs font-bold text-pmpi-orange-500 tracking-widest uppercase bg-pmpi-orange-500/10 border border-pmpi-orange-500/20 px-3.5 py-1.5 rounded-full">
             DÚVIDAS FREQUENTES
           </span>
-          <h2 className="font-display font-black text-3xl text-white mt-4 tracking-tight">
+          <h2 className="font-display font-black text-3xl text-white mt-4 tracking-tight leading-tight">
             Perguntas Frequentes
           </h2>
           <p className="font-sans text-sm text-slate-300 mt-2">
-            Caso ainda tenha alguma dúvida sobre o curso de legislação institucional da PMPI, confira as respostas abaixo.
+            Ainda tem alguma dúvida? Encontre respostas rápidas sobre a estrutura e o funcionamento do curso.
           </p>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-4 max-w-3xl mx-auto">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div 
                 key={faq.id}
-                className={`rounded-xl border transition-all duration-300 ${
+                className={`rounded-2xl border transition-all duration-300 ${
                   isOpen 
-                    ? "bg-pmpi-gold-500/10 border-pmpi-gold-500/30 shadow-md" 
-                    : "bg-brand-card border-brand-border hover:border-slate-850 hover:bg-slate-900/40"
+                    ? "bg-slate-950 border-slate-750 shadow-lg" 
+                    : "bg-slate-950/40 border-slate-850 hover:border-slate-800 hover:shadow-md"
                 }`}
               >
                 <button
                   onClick={() => handleToggle(index)}
                   id={`faq-accordion-button-${index}`}
-                  className="w-full flex items-center justify-between p-5 text-left cursor-pointer"
+                  className="w-full flex items-center justify-between p-5 text-left cursor-pointer focus:outline-none"
                 >
                   <div className="flex items-center gap-3">
-                    <HelpCircle className="w-5 h-5 text-pmpi-gold-400 shrink-0" />
-                    <span className="font-display font-bold text-sm sm:text-base text-slate-100">
+                    <HelpCircle className="w-5 h-5 text-pmpi-orange-500 shrink-0" />
+                    <span className="font-display font-bold text-sm sm:text-base text-white leading-snug">
                       {faq.question}
                     </span>
                   </div>
-                  <div>
+                  <div className="ml-4 p-1 rounded-full bg-slate-900 text-slate-400 shrink-0">
                     {isOpen ? (
-                      <Minus className="w-4 h-4 text-pmpi-gold-500 shrink-0" />
+                      <Minus className="w-4 h-4" />
                     ) : (
-                      <Plus className="w-4 h-4 text-slate-550 shrink-0" />
+                      <Plus className="w-4 h-4" />
                     )}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 pt-1 border-t border-slate-850">
+                  <div className="px-5 pb-5 pt-1 border-t border-slate-850 animate-fade-in">
                     <p className="font-sans text-xs sm:text-sm text-slate-350 leading-relaxed">
                       {faq.answer}
                     </p>
@@ -112,6 +104,24 @@ export default function FAQ() {
               </div>
             );
           })}
+        </div>
+
+        {/* Repeated CTA button */}
+        <div className="mt-16 flex flex-col items-center justify-center gap-4 text-center">
+          <button
+            onClick={() => {
+              const element = document.getElementById("valores");
+              if (element) element.scrollIntoView({ behavior: "smooth" });
+            }}
+            id="faq-cta-button"
+            className="font-display font-bold text-base text-white py-4 px-10 rounded-full bg-gradient-to-r from-pmpi-orange-500 to-pmpi-orange-600 hover:brightness-110 shadow-lg shadow-pmpi-orange-500/20 hover:scale-103 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            QUERO COMEÇAR AGORA
+            <ArrowRight className="w-5 h-5" />
+          </button>
+          <span className="text-[11px] text-slate-550 font-mono">
+            ★ Comece a estudar imediatamente com acesso 100% online e seguro
+          </span>
         </div>
 
       </div>

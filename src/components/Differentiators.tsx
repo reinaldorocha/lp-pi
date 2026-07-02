@@ -1,100 +1,164 @@
 import React from "react";
-import { GraduationCap, Target, ShieldCheck, TrendingUp, ListOrdered, Layers, Sparkles, Gauge, Calendar } from "lucide-react";
+import { Check, X, ArrowRight, ShieldCheck, AlertCircle } from "lucide-react";
 
 export default function Differentiators() {
-  const diffs = [
+  const comparisonRows = [
     {
-      title: "Professor Especialista",
-      desc: "Instrução por policial penal, mentor de carreiras policiais experiente e focado especificamente na banca do Piauí.",
-      icon: GraduationCap,
+      feature: "Duração das Aulas",
+      ourVal: "Aulas dinâmicas e cirúrgicas de 10 a 15 minutos focadas no edital.",
+      compVal: "Vídeos cansativos de 2 horas cheios de enrolação acadêmica.",
+      ourIcon: Check,
+      compIcon: X,
     },
     {
-      title: "Foco Exclusivo na PMPI",
-      desc: "Não é um curso adaptado de outro estado. 100% gravado, editado e estruturado especificamente para a Polícia Militar do Piauí.",
-      icon: Target,
+      feature: "Bizus e Mnemônicos",
+      ourVal: "Bizus prontos, gatilhos mentais e mnemônicos para fixação rápida.",
+      compVal: "Sem material de memorização ativa, apenas a lei seca crua.",
+      ourIcon: Check,
+      compIcon: X,
     },
     {
-      title: "Conteúdo 100% Atualizado",
-      desc: "Inclui a nova Lei Orgânica 7.725/2022, Lei de Proteção Social 7.772/2022, as modificações de 2024 (Lei 8.430) e os novos Decretos.",
-      icon: ShieldCheck,
+      feature: "Linguagem do Curso",
+      ourVal: "Legislação traduzida de forma simples, lógica e descomplicada.",
+      compVal: "Linguagem jurídica ('juridiquês') complexa de difícil absorção.",
+      ourIcon: Check,
+      compIcon: X,
     },
     {
-      title: "Aulas Objetivas de Alta Fixação",
-      desc: "Vídeos focados em tópicos específicos de 10 a 15 minutos, ideais para concurseiros com rotinas cansativas ou pouco tempo.",
-      icon: TrendingUp,
+      feature: "Foco do Material",
+      ourVal: "100% estruturado e gravado especificamente para a PMPI.",
+      compVal: "Cursos genéricos e reaproveitados de outros concursos estaduais.",
+      ourIcon: Check,
+      compIcon: X,
     },
     {
-      title: "Explicação Artigo por Artigo",
-      desc: "Esclarecemos cada dispositivo legal de maneira simples, revelando o que a lei realmente quer dizer e como será cobrado.",
-      icon: ListOrdered,
-    },
-    {
-      title: "Esquemas Visuais de Decisão",
-      desc: "Fluxogramas e diagramas de hierarquias, processos disciplinares e penalidades para você memorizar sem misturar as regras.",
-      icon: Layers,
-    },
-    {
-      title: "Material Rápido de Revisão",
-      desc: "Acesso a PDFs condensados e mnemônicos rápidos de véspera para fixar as diretrizes-chave nos dias anteriores à prova.",
-      icon: Sparkles,
-    },
-    {
-      title: "Estudo Acelerado",
-      desc: "Nossa metodologia economiza até 80% do tempo gasto em leituras redundantes da lei seca, maximizando a eficiência diária.",
-      icon: Gauge,
-    },
-    {
-      title: "Cronograma Sugerido Incluso",
-      desc: "Roteiro detalhado indicando exatamente quais módulos estudar e quando revisar, conforme seu tempo diário disponível.",
-      icon: Calendar,
+      feature: "Suporte e Atualização",
+      ourVal: "Garantia de atualizações normativas constantes com as leis de 2024.",
+      compVal: "Material estático, sem atualizações e suporte a dúvidas nulo.",
+      ourIcon: Check,
+      compIcon: X,
     }
   ];
 
   return (
     <section 
       id="diferenciais"
-      className="py-24 bg-brand-dark border-t border-slate-900 relative"
+      className="py-24 bg-slate-900 border-t border-slate-950 relative overflow-hidden text-slate-100"
     >
-      <div className="absolute top-10 right-1/4 w-[250px] h-[250px] bg-pmpi-gold-500/5 rounded-full filter blur-[100px] pointer-events-none"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-mono text-xs font-bold text-pmpi-gold-400 tracking-widest uppercase bg-pmpi-gold-500/10 border border-pmpi-gold-500/25 px-3 py-1 rounded-full">
-            DIFERENCIAIS EXCLUSIVOS
+          <span className="font-mono text-xs font-bold text-pmpi-orange-500 tracking-widest uppercase bg-pmpi-orange-500/10 border border-pmpi-orange-500/20 px-3.5 py-1.5 rounded-full">
+            POR QUE ESCOLHER O PMPI BIZURADA?
           </span>
-          <h2 className="font-display font-black text-3xl sm:text-4xl text-white mt-4 tracking-tight">
-            Por Que Fazer Este Curso e Não Outro?
+          <h2 className="font-display font-black text-3xl sm:text-4xl text-white mt-4 tracking-tight leading-tight">
+            Compare e veja a diferença na sua preparação
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
-            Nós não cobramos apenas teoria. Desenvolvemos uma estrutura focada em alta performance para garantir que você pontue o máximo possível na matéria de Legislação.
+            Pare de perder tempo com métodos tradicionais ultrapassados. Desenvolvemos uma metodologia focada em memorização acelerada para garantir que você gabarite Legislação.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {diffs.map((diff, index) => {
-            const Icon = diff.icon;
-            return (
-              <div 
-                key={index}
-                className="bg-brand-card border border-brand-border hover:border-pmpi-gold-500/40 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 shadow-md group"
-              >
-                {/* Icon Wrapper */}
-                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center mb-6 group-hover:bg-pmpi-gold-500/10 transition-all">
-                  <Icon className="w-5 h-5 text-pmpi-gold-500 group-hover:scale-110 transition-all" />
-                </div>
+        {/* Comparison Table Desktop */}
+        <div className="hidden md:block max-w-5xl mx-auto bg-slate-950 rounded-2xl border border-slate-800 shadow-xl overflow-hidden">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-950 border-b border-slate-850">
+                <th className="py-5 px-6 font-display font-bold text-sm text-slate-400 uppercase tracking-wider w-1/4">Recurso</th>
+                <th className="py-5 px-6 font-display font-black text-sm text-white uppercase tracking-wider w-3/8 bg-pmpi-orange-500/5">
+                  <div className="flex items-center gap-1.5">
+                    <ShieldCheck className="w-4 h-4 text-pmpi-orange-500" />
+                    <span>O Nosso Curso</span>
+                  </div>
+                </th>
+                <th className="py-5 px-6 font-display font-bold text-sm text-slate-400 uppercase tracking-wider w-3/8">
+                  <div className="flex items-center gap-1.5">
+                    <AlertCircle className="w-4 h-4 text-slate-500" />
+                    <span>Cursos Tradicionais</span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row, idx) => (
+                <tr key={idx} className="border-b border-slate-850 last:border-none">
+                  <td className="py-5 px-6 font-display font-bold text-slate-200 text-sm">{row.feature}</td>
+                  
+                  {/* Our Offer Column */}
+                  <td className="py-5 px-6 bg-pmpi-orange-500/5 text-sm">
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-emerald-950 border border-emerald-900/50 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-emerald-400" />
+                      </div>
+                      <span className="font-sans font-semibold text-slate-200 leading-relaxed">{row.ourVal}</span>
+                    </div>
+                  </td>
+                  
+                  {/* Competitor Column */}
+                  <td className="py-5 px-6 text-sm text-slate-400">
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-rose-950 border border-rose-900/50 flex items-center justify-center shrink-0 mt-0.5">
+                        <X className="w-3 h-3 text-rose-400" />
+                      </div>
+                      <span className="font-sans leading-relaxed">{row.compVal}</span>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-                <h3 className="font-display font-black text-base sm:text-lg text-slate-100 mb-2">
-                  {diff.title}
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  {diff.desc}
-                </p>
+        {/* Mobile Layout (Cards) */}
+        <div className="md:hidden space-y-6 max-w-md mx-auto">
+          {comparisonRows.map((row, idx) => (
+            <div key={idx} className="bg-slate-950 border border-slate-850 rounded-2xl p-5 shadow-lg space-y-4">
+              <h3 className="font-display font-black text-white text-sm uppercase tracking-wider border-b border-slate-850 pb-2">
+                {row.feature}
+              </h3>
+              
+              {/* Us */}
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold text-pmpi-orange-500 uppercase tracking-wider block">O Nosso Curso</span>
+                <div className="flex items-start gap-2.5">
+                  <div className="w-4.5 h-4.5 rounded-full bg-emerald-950 border border-emerald-900/50 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-2.5 h-2.5 text-emerald-400" />
+                  </div>
+                  <p className="text-xs font-semibold text-slate-200 leading-relaxed">{row.ourVal}</p>
+                </div>
               </div>
-            );
-          })}
+
+              {/* Competitors */}
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Cursos Tradicionais</span>
+                <div className="flex items-start gap-2.5">
+                  <div className="w-4.5 h-4.5 rounded-full bg-rose-950 border border-rose-900/50 flex items-center justify-center shrink-0 mt-0.5">
+                    <X className="w-2.5 h-2.5 text-rose-400" />
+                  </div>
+                  <p className="text-xs text-slate-400 leading-relaxed">{row.compVal}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Repeated CTA Block */}
+        <div className="mt-16 flex flex-col items-center justify-center gap-4 text-center">
+          <button
+            onClick={() => {
+              const element = document.getElementById("valores");
+              if (element) element.scrollIntoView({ behavior: "smooth" });
+            }}
+            id="differentiators-cta-button"
+            className="font-display font-bold text-base text-white py-4 px-10 rounded-full bg-gradient-to-r from-pmpi-orange-500 to-pmpi-orange-600 hover:brightness-110 shadow-lg shadow-pmpi-orange-500/20 hover:scale-103 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            QUERO COMEÇAR AGORA
+            <ArrowRight className="w-5 h-5" />
+          </button>
+          <span className="text-[11px] text-slate-500 font-mono">
+            ★ Pare de estudar de forma genérica e garanta seu diferencial competitivo
+          </span>
         </div>
 
       </div>
