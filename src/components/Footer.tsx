@@ -74,9 +74,6 @@ export default function Footer() {
           <p className="font-sans">
             © {new Date().getFullYear()} PMPI BIZURADA. Todos os direitos reservados.
           </p>
-          <p className="font-sans italic border-l-2 border-slate-800 pl-3 text-slate-600">
-            <strong>AVISO LEGAL:</strong> O 'PMPI Bizurada' é uma iniciativa de treinamento preparatório autônoma organizada por Silva Júnior Mentoria e Produções de Materiais Digitais. Não possuímos vínculo formal, parceria, convênio ou filiação direta com a Polícia Militar do Estado do Piauí (PMPI), Governadoria do Estado do Piauí, Secretaria de Segurança Pública do Piauí (SSP-PI), ou bancas organizadoras oficiais dos certames. A aprovação depende única e exclusivamente do esforço pessoal, constância e disciplina do candidato, sendo as informações, simulados e bônus disponibilizados para finalidade estritamente pedagógica de estudo preventivo.
-          </p>
         </div>
 
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ShieldCheck, Lock, CreditCard, QrCode, FileText, Check, ArrowRight, X, User, Mail, Sparkles, ClipboardCheck, CalendarClock, Map } from "lucide-react";
+import { ShieldCheck, Lock, CreditCard, QrCode, FileText, Check, ArrowRight, X, User, Mail, Sparkles, ClipboardCheck, CalendarClock, Map, MessageCircle } from "lucide-react";
 
 export default function Pricing() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -10,7 +10,7 @@ export default function Pricing() {
   const [simulationStep, setSimulationStep] = useState<"form" | "result">("form");
 
   const openCheckout = () => {
-    setIsCheckoutOpen(true);
+    window.location.href = "https://app.profjonathanrocha.com.br/c/ymnafed";
   };
 
   const handleCheckoutSubmit = (e: React.FormEvent) => {
@@ -34,28 +34,28 @@ export default function Pricing() {
 
   const bonuses = [
     {
-      title: "Checklist de Revisão",
-      value: "R$ 47,00",
-      desc: "Controle exatamente quais leis e artigos você já revisou e qual sua taxa de acertos.",
+      title: "Apostila de Questões Comentadas",
+      value: "R$ 67,00",
+      desc: "Apostila de questões comentadas com todo o conteúdo programático no padrão da banca FCC.",
       icon: ClipboardCheck,
     },
     {
-      title: "Cronograma de 4 Semanas",
-      value: "R$ 67,00",
-      desc: "O plano de ataque passo a passo para esgotar a legislação sem estresse.",
+      title: "Todas as Leis Organizadas",
+      value: "R$ 47,00",
+      desc: "Todas as leis previstas no edital em arquivos PDF organizados prontos para o seu estudo.",
+      icon: FileText,
+    },
+    {
+      title: "Revisão de Reta Final",
+      value: "R$ 97,00",
+      desc: "Revisão ao vivo na semana da prova, destacando os pontos mais importantes e prováveis de cobrança.",
       icon: CalendarClock,
     },
     {
-      title: "Kit de Mapas Mentais",
-      value: "R$ 97,00",
-      desc: "Diagramas visuais focados em memorização rápida de prazos e punições.",
-      icon: Map,
-    },
-    {
-      title: "Resumos Exclusivos",
+      title: "Suporte Direto no WhatsApp",
       value: "R$ 49,00",
-      desc: "A legislação pura mastigada para ler rapidamente no celular.",
-      icon: FileText,
+      desc: "Acesso direto ao WhatsApp do professor para tirar dúvidas sobre toda a disciplina.",
+      icon: Sparkles,
     }
   ];
 
@@ -156,25 +156,43 @@ export default function Pricing() {
                 </div>
 
                 {/* Prices */}
-                <div className="mb-8">
-                  <span className="text-slate-500 text-xs sm:text-sm line-through block font-medium">De R$ 197,00 por apenas:</span>
-                  <div className="flex items-baseline gap-1 mt-1">
-                    <span className="font-sans font-semibold text-sm text-slate-400">12x de</span>
-                    <span className="font-display font-black text-3xl sm:text-4.5xl text-pmpi-orange-500">R$ 9,74</span>
+                <div className="mb-8 bg-slate-950/50 p-4.5 rounded-2xl border border-slate-800">
+                  <span className="text-slate-400 text-xs font-mono uppercase tracking-wider block mb-2 font-bold text-glow-blue">INVESTIMENTO</span>
+                  <div className="space-y-1">
+                    <span className="text-[11px] text-slate-500 line-through block font-semibold leading-none">De R$ 197,00 por apenas:</span>
+                    <div className="font-display font-black text-2xl sm:text-3xl text-emerald-400 tracking-tight leading-none mb-1">
+                      R$ 97,00 À VISTA
+                    </div>
+                    <div className="text-xs sm:text-sm font-semibold text-slate-350">
+                      ou em <span className="text-pmpi-orange-500 font-bold text-lg">12x de R$ 10,03</span>
+                    </div>
                   </div>
-                  <span className="text-[11px] text-slate-400 font-mono block mt-2">ou por apenas <strong className="text-white font-bold">R$ 97,00</strong> à vista no Pix</span>
                 </div>
               </div>
 
-              {/* Purchase Button */}
-              <button
-                onClick={openCheckout}
-                id="pricing-cta-button-garantir"
-                className="w-full font-display font-bold text-white py-4 rounded-full bg-gradient-to-r from-pmpi-orange-500 via-pmpi-orange-500 to-pmpi-orange-600 hover:brightness-110 shadow-lg shadow-pmpi-orange-500/20 hover:scale-103 active:scale-95 transition-all text-center flex items-center justify-center gap-2 cursor-pointer"
-              >
-                QUERO GARANTIR MINHA VAGA AGORA
-                <ArrowRight className="w-5 h-5" />
-              </button>
+              {/* Purchase Buttons Stack */}
+              <div className="flex flex-col gap-3">
+                <button
+                  onClick={openCheckout}
+                  id="pricing-cta-button-garantir"
+                  className="w-full font-display font-bold text-white py-4 rounded-full bg-gradient-to-r from-pmpi-orange-500 via-pmpi-orange-500 to-pmpi-orange-600 hover:brightness-110 shadow-lg shadow-pmpi-orange-500/20 hover:scale-103 active:scale-95 transition-all text-center flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  QUERO MATRICULAR COM CARTÃO/PIX
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+
+                {/* White WhatsApp direct purchase button inspired by the first image */}
+                <a
+                  href="https://wa.me/5586988812196?text=Olá%20Professor%20Jonathan,%20quero%20garantir%20minha%20vaga%20no%20Curso%20de%20Legislação%20da%20PMPI!"
+                  target="_blank"
+                  rel="noreferrer"
+                  id="pricing-whatsapp-cta"
+                  className="w-full font-display font-bold text-xs sm:text-sm py-3.5 px-6 rounded-full bg-white text-slate-950 hover:bg-slate-100 shadow-md hover:scale-103 active:scale-95 transition-all text-center flex items-center justify-center gap-2 cursor-pointer border border-slate-200"
+                >
+                  <MessageCircle className="w-4.5 h-4.5 text-emerald-500 fill-emerald-500 shrink-0" />
+                  <span>GARANTA SUA VAGA (86) 9.8881-2196</span>
+                </a>
+              </div>
 
               {/* Secure Checkout Trust Seals */}
               <div className="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-slate-800 text-[10px] text-slate-500 font-mono">
@@ -334,7 +352,7 @@ export default function Pricing() {
                     DADOS DE ACESSO AO PORTAL:
                   </p>
                   <p className="text-slate-300">
-                    <span className="text-slate-550 mr-2">Link de Login:</span> plataforma.pmpi.bizurada
+                    <span className="text-slate-550 mr-2">Link de Login:</span> Enviado no seu e-mail
                   </p>
                   <p className="text-slate-300">
                     <span className="text-slate-550 mr-2">Usuário:</span> {leadEmail}
