@@ -62,13 +62,25 @@ export default function Hero({ onCtaClick }: HeroProps) {
               <span>CURSO ISOLADO EM QUESTÕES • LEGISLAÇÃO</span>
             </div>
 
-            {/* Giant, ultra-clear Title */}
-            <div className="relative mb-2">
-              <h1 className="font-display font-black text-6xl sm:text-7xl lg:text-8xl text-white tracking-tighter leading-none select-none text-glow">
-                PMPI
-              </h1>
-              <div className="absolute -top-3 -right-3 sm:-right-6 bg-pmpi-orange-500 text-white font-mono text-[9px] font-black px-2 py-0.5 rounded-md uppercase rotate-12 tracking-wide shadow-md">
-                100% ATUALIZADO
+            {/* Giant, ultra-clear Title with PMPI Crest */}
+            <div className="flex items-center gap-5 sm:gap-6 mb-2">
+              <div className="relative">
+                <h1 className="font-display font-black text-6xl sm:text-7xl lg:text-8xl text-white tracking-tighter leading-none select-none text-glow">
+                  PMPI
+                </h1>
+                <div className="absolute -top-3 -right-3 sm:-right-6 bg-pmpi-orange-500 text-white font-mono text-[9px] font-black px-2 py-0.5 rounded-md uppercase rotate-12 tracking-wide shadow-md">
+                  100% ATUALIZADO
+                </div>
+              </div>
+              
+              {/* Institutional PMPI Logo */}
+              <div className="relative shrink-0 flex items-center justify-center p-1.5 px-2.5 rounded-xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-sm shadow-lg hover:border-pmpi-orange-500/30 transition-all duration-300">
+                <img 
+                  src="https://profjonathanrocha.com.br/wp-content/uploads/2026/02/PMpi-187x300.webp" 
+                  alt="Brasão PMPI" 
+                  className="h-14 sm:h-20 w-auto object-contain"
+                  referrerPolicy="no-referrer"
+                />
               </div>
             </div>
             
