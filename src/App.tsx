@@ -10,6 +10,7 @@ import Guarantee from "./components/Guarantee";
 import Pricing from "./components/Pricing";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 export default function App() {
   const handleScrollToPricing = () => {
@@ -54,6 +55,9 @@ export default function App() {
 
       {/* Footer copyright and disclaimer */}
       <Footer />
+
+      {/* Floating WhatsApp Action Button */}
+      <FloatingWhatsApp />
 
     </div>
   );

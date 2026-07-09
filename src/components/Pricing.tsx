@@ -180,18 +180,6 @@ export default function Pricing() {
                   QUERO MATRICULAR COM CARTÃO/PIX
                   <ArrowRight className="w-5 h-5" />
                 </button>
-
-                {/* White WhatsApp direct purchase button inspired by the first image */}
-                <a
-                  href="https://wa.me/5586988812196?text=Olá%20Professor%20Jonathan,%20quero%20garantir%20minha%20vaga%20no%20Curso%20de%20Legislação%20da%20PMPI!"
-                  target="_blank"
-                  rel="noreferrer"
-                  id="pricing-whatsapp-cta"
-                  className="w-full font-display font-bold text-xs sm:text-sm py-3.5 px-6 rounded-full bg-white text-slate-950 hover:bg-slate-100 shadow-md hover:scale-103 active:scale-95 transition-all text-center flex items-center justify-center gap-2 cursor-pointer border border-slate-200"
-                >
-                  <MessageCircle className="w-4.5 h-4.5 text-emerald-500 fill-emerald-500 shrink-0" />
-                  <span>GARANTA SUA VAGA (86) 9.8881-2196</span>
-                </a>
               </div>
 
               {/* Secure Checkout Trust Seals */}

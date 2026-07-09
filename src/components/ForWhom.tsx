@@ -10,17 +10,17 @@ export default function ForWhom() {
     },
     {
       title: "Quem já estuda",
-      description: "Destrave seu desempenho dominando as principais pegadinhas das bancas, exceções legais e as novidades normativas de 2024.",
+      description: "Destrave seu desempenho dominando as principais pegadinhas das bancas, exceções legais e as novidades normativas de 2026.",
       icon: Shield,
     },
     {
       title: "Quem quer revisar",
-      description: "Ganhe velocidade e fixe os prazos, hierarquias e competências críticas através de nossos mapas de véspera e bizus consolidados.",
+      description: "Ganhe velocidade e fixe os prazos, hierarquias e competências críticas através de nossos bizus consolidados.",
       icon: BookOpen,
     },
     {
       title: "Quem tem pouco tempo",
-      description: "Aproveite cada minuto do seu dia com videoaulas curtas de 15 minutos que se adaptam à rotina de quem trabalha e estuda.",
+      description: "Aproveite cada minuto do seu dia com videoaulas curtas de 30 minutos que se adaptam à rotina de quem trabalha e estuda.",
       icon: Clock,
     }
   ];

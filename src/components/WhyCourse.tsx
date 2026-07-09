@@ -5,7 +5,7 @@ export default function WhyCourse() {
   const benefits = [
     {
       title: "Aulas objetivas",
-      description: "Vídeos direto ao ponto. Cada artigo importante é dissecado em explicações de curta duração para facilitar sua memorização.",
+      description: "Vídeos direto ao ponto. Cada artigo importante é dissecado em explicações de curta duração para facilitar seu aprendizado.",
       icon: Video,
     },
     {
@@ -15,7 +15,7 @@ export default function WhyCourse() {
     },
     {
       title: "Atualizado conforme edital",
-      description: "Material totalmente atualizado com as leis recentes de 2024 e todos os novos decretos estaduais exigidos.",
+      description: "Material totalmente atualizado com as leis recentes de 2026 e todos os novos decretos estaduais exigidos.",
       icon: CheckCircle2,
     },
     {

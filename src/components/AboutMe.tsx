@@ -17,7 +17,7 @@ export default function AboutMe() {
     {
       icon: Award,
       title: "Formação de Elite",
-      desc: "Bacharel em Direito, Especialista em Direito Penal e Processo Penal, e Técnico em Segurança do Trabalho.",
+      desc: "Bacharel em Direito e Especialista em Direito Penal e Processo Penal.",
     },
     {
       icon: Target,
@@ -47,7 +47,7 @@ export default function AboutMe() {
             Quem será seu mentor?
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
-            Conheça o instrutor que vai simplificar a legislação militar da PMPI e te levar direto à aprovação.
+            Conheça o seu professor que vai simplificar a legislação militar da PMPI e vai te guiar até a tão sonhada aprovação.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function AboutMe() {
               {/* Floating badge inside the photo */}
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/90 border border-slate-800/80 backdrop-blur-md">
                 <span className="font-mono text-[10px] font-bold text-pmpi-orange-500 bg-pmpi-orange-500/10 border border-pmpi-orange-500/20 px-2.5 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">
-                  Policial Penal & Mentor
+                  Policial, professor e mentor
                 </span>
                 <h4 className="font-display font-black text-lg text-white">
                   Prof. Jonathan Rocha
@@ -86,11 +86,11 @@ export default function AboutMe() {
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-4">
               <h3 className="font-display font-black text-xl sm:text-2xl text-white leading-tight">
-                Sou Policial Penal, e atuo como professor e mentor para concursos públicos.
+                Sou Policial, e atuo como professor e mentor para concursos públicos.
               </h3>
               
               <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed">
-                Compartilhando a experiência de <strong>6 anos no mundo dos concursos públicos</strong>, possuo formação em: Técnico em Segurança do Trabalho, Bacharel em Direito, Especialista em Direito Penal e Processo Penal. Minha primeira aprovação veio logo aos 23 anos de idade para o cargo de Guarda Civil Municipal, e atualmente exerço o cargo de Policial Penal.
+                Compartilhando a experiência de <strong>6 anos no mundo dos concursos públicos</strong>, possuo formação como Bacharel em Direito e Especialista em Direito Penal e Processo Penal. Minha primeira aprovação veio logo aos 23 anos de idade para o cargo de Guarda Civil Municipal, e atualmente exerço o cargo de Policial Penal.
               </p>
               
               <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed">

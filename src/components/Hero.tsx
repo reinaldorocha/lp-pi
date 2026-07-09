@@ -74,11 +74,11 @@ export default function Hero({ onCtaClick }: HeroProps) {
               </div>
               
               {/* Institutional PMPI Logo */}
-              <div className="relative shrink-0 flex items-center justify-center p-1.5 px-2.5 rounded-xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-sm shadow-lg hover:border-pmpi-orange-500/30 transition-all duration-300">
+              <div className="relative shrink-0 flex items-center justify-center p-1.5 px-2 rounded-xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-sm shadow-lg hover:border-pmpi-orange-500/30 transition-all duration-300">
                 <img 
                   src="https://profjonathanrocha.com.br/wp-content/uploads/2026/02/PMpi-187x300.webp" 
                   alt="Brasão PMPI" 
-                  className="h-14 sm:h-20 w-auto object-contain"
+                  className="w-[100px] h-[150px] object-contain"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -90,7 +90,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
 
             {/* Sub-headline: direct benefit */}
             <p className="font-sans text-sm sm:text-base text-slate-300 max-w-2xl mb-8 leading-relaxed">
-              Esqueça PDFs gigantescos e aulas monótonas. Domine as leis, estatutos e decretos estaduais com foco 100% em questões comentadas de forma bizurada. Sua farda começa aqui.
+              Esqueça PDFs gigantescos e aulas monótonas. Domine todo conteúdo programático do seu edital com foco 100% em questões comentadas de forma bizurada. Sua farda começa aqui.
             </p>
 
             {/* Rating and Social Proof ABOVE the button */}
