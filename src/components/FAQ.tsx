@@ -28,7 +28,7 @@ export default function FAQ() {
     {
       id: 5,
       question: "Quanto tempo de acesso eu terei ao curso?",
-      answer: "Você terá acesso integral por 12 meses (1 ano). Esse prazo é mais do que suficiente para você assistir a todas as aulas, revisar com os bizus e consolidar o conteúdo até o dia da prova."
+      answer: "Você terá acesso integral por 12 meses (1 ano). Como a prova será realizada antes desse prazo, seu acesso está totalmente garantido para que você possa assistir, revisar e consolidar todo o conteúdo até o dia do exame, sem qualquer pressa."
     },
     {
       id: 6,

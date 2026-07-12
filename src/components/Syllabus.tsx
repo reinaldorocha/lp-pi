@@ -1,125 +1,69 @@
-import React, { useState } from "react";
-import { Plus, Minus, Video, FileText, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import React from "react";
+import { Scale, ArrowRight } from "lucide-react";
 
 export default function Syllabus() {
-  const [activeModuleId, setActiveModuleId] = useState<string>("mod-1");
-
-  const modules = [
+  const legislations = [
     {
-      id: "mod-1",
-      number: "MÓDULO 01",
-      title: "Estatuto dos Policiais Militares (PMPI)",
-      description: "Estudo aprofundado dos direitos, prerrogativas, deveres, obrigações e da carreira dos policiais militares piauenses.",
-      topics: [
-        "Lei Estadual nº 3.808, de 16/07/1981 (Estatuto da PMPI)",
-        "Análise artigo por artigo com foco em pegadinhas de prova",
-        "Questões comentadas e bizus de memorização rápida"
-      ]
+      index: "01",
+      title: "Estatuto da Polícia Militar do Piauí (PMPI)",
+      subtitle: "Lei Estadual nº 3.808, de 16 de julho de 1981",
+      badge: "Legislação Estadual",
     },
     {
-      id: "mod-2",
-      number: "MÓDULO 02",
-      title: "Código de Ética e Disciplina Militar",
-      description: "As diretrizes éticas, transgressões disciplinares, sanções aplicáveis e recursos assegurados aos militares do Piauí.",
-      topics: [
-        "Lei Estadual nº 7.725, de 17/01/2022 (Novo Código de Ética)",
-        "Classificação e rito das transgressões (Leve, Média e Grave)",
-        "Conselhos de Justificação, Disciplina e processo ético"
-      ]
+      index: "02",
+      title: "Código de Ética e Disciplina dos Militares do Estado do Piauí",
+      subtitle: "Lei Estadual nº 7.725, de 17 de janeiro de 2022",
+      badge: "Legislação Estadual",
     },
     {
-      id: "mod-3",
-      number: "MÓDULO 03",
-      title: "Lei de Organização Básica (LOB)",
-      description: "A engrenagem e a estruturação dos órgãos de direção, apoio e execução da Polícia Militar piauiense.",
-      topics: [
-        "Lei Estadual nº 3.529, de 20/10/1977 (LOB da PMPI)",
-        "Comando-Geral e divisão de competências",
-        "Atribuições institucionais e subordinação direta"
-      ]
+      index: "03",
+      title: "Constituição do Estado do Piauí (Dispositivos Militares)",
+      subtitle: "Dispositivos aplicáveis aos Militares do Estado na Carta de 1989",
+      badge: "Constitucional Estadual",
     },
     {
-      id: "mod-4",
-      number: "MÓDULO 04",
-      title: "Lei de Promoção de Praças",
-      description: "O plano de carreira das praças da PMPI, estabelecendo os critérios e requisitos para as promoções.",
-      topics: [
-        "Lei Complementar Estadual nº 68, de 23/03/2006",
-        "Princípios de promoção (Antiguidade, Merecimento, Bravura)",
-        "Interstícios e condições de elegibilidade"
-      ]
+      index: "04",
+      title: "Lei de Organização Básica da PMPI",
+      subtitle: "Lei Estadual nº 3.529, de 20 de outubro de 1977",
+      badge: "Legislação Estadual",
     },
     {
-      id: "mod-5",
-      number: "MÓDULO 05",
-      title: "Código de Vencimentos da PMPI",
-      description: "A remuneração dos militares, incluindo subsídios, indenizações, gratificações e outros direitos pecuniários.",
-      topics: [
-        "Lei Estadual nº 5.378, de 10/02/2004",
-        "Direitos remuneratórios ativos e de inatividade",
-        "Ajuda de custo, diárias e adicionais constitucionais"
-      ]
+      index: "05",
+      title: "Lei de Vencimentos dos Policiais Militares do Piauí",
+      subtitle: "Lei Estadual nº 5.378, de 10 de fevereiro de 2004",
+      badge: "Legislação Estadual",
     },
     {
-      id: "mod-6",
-      number: "MÓDULO 06",
-      title: "Lei Orgânica Nacional das Polícias Militares",
-      description: "As diretrizes federais e a padronização das normas gerais de organização e garantias das PMs no Brasil.",
-      topics: [
-        "Lei Federal nº 14.751, de 12/12/2023",
-        "Novas prerrogativas e garantias nacionais dos militares",
-        "Requisitos de ingresso e transição legislativa"
-      ]
+      index: "06",
+      title: "Lei de Promoção de Praças da PMPI",
+      subtitle: "Lei Complementar Estadual nº 68, de 23 de março de 2006",
+      badge: "Legislação Estadual",
     },
     {
-      id: "mod-7",
-      number: "MÓDULO 07",
-      title: "Decreto-Lei de Reorganização das PMs e CBMs",
-      description: "A norma que reorganiza as polícias militares e corpos de bombeiros como forças auxiliares e reserva do Exército.",
-      topics: [
-        "Decreto-Lei Federal nº 667, de 02/07/1969",
-        "Subordinação operacional e regramento de armamentos",
-        "Disposições federais de controle e fiscalização"
-      ]
+      index: "07",
+      title: "Regulamento de Promoção de Praças da PMPI",
+      subtitle: "Decreto Estadual nº 12.422, de 18 de novembro de 2006",
+      badge: "Decreto Estadual",
     },
     {
-      id: "mod-8",
-      number: "MÓDULO 08",
-      title: "Regulamento das Polícias Militares (R-200)",
-      description: "Detalhamento operacional da coordenação, subordinação e do controle das forças auxiliares estaduais.",
-      topics: [
-        "Decreto Federal nº 88.777, de 30/09/1983",
-        "Emprego conjunto, planejamento e diretrizes de defesa territorial",
-        "Conceitos fundamentais de ordem pública e policiamento"
-      ]
+      index: "08",
+      title: "Decreto-Lei de Reorganização das Polícias Militares e Corpos de Bombeiros Militares",
+      subtitle: "Decreto-Lei Federal nº 667, de 02 de julho de 1969",
+      badge: "Legislação Federal",
     },
     {
-      id: "mod-9",
-      number: "MÓDULO 09",
-      title: "Constituição do Estado do Piauí (Seção Militar)",
-      description: "O regramento constitucional reservado às corporações militares estaduais na carta constitucional do Piauí.",
-      topics: [
-        "Artigos específicos da Constituição Estadual aplicáveis aos Militares",
-        "Limitações constitucionais, direitos e proibições (sindicalização/greve)",
-        "Jurisdição e Justiça Militar Estadual"
-      ]
+      index: "09",
+      title: "Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares",
+      subtitle: "Lei Federal nº 14.751, de 12 de dezembro de 2023",
+      badge: "Legislação Federal",
     },
     {
-      id: "mod-10",
-      number: "MÓDULO 10",
-      title: "Regulamento de Promoção de Praças",
-      description: "O decreto regulamentar que detalha o processamento operacional e as comissões de promoção.",
-      topics: [
-        "Decreto Estadual nº 12.422, de 18/11/2006",
-        "Atribuições da Comissão de Promoção de Praças (CPP)",
-        "Ritos de recursos, pontuações e quadros de acesso"
-      ]
-    }
+      index: "10",
+      title: "Regulamento para as Polícias Militares e Corpos de Bombeiros (R-200)",
+      subtitle: "Decreto Federal nº 88.777, de 30 de setembro de 1983",
+      badge: "Decreto Federal",
+    },
   ];
-
-  const handleToggle = (id: string) => {
-    setActiveModuleId(activeModuleId === id ? "" : id);
-  };
 
   return (
     <section 
@@ -134,85 +78,49 @@ export default function Syllabus() {
             CONTEÚDO PROGRAMÁTICO
           </span>
           <h2 className="font-display font-black text-3xl sm:text-4xl text-white mt-4 tracking-tight leading-tight">
-            Grade completa desenvolvida sob medida
+            Grade de Conteúdo Atualizada
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
             Abordamos 100% da legislação prevista no edital da Polícia Militar do Piauí de forma lógica, sem rodeios e focada na sua aprovação.
           </p>
         </div>
 
-        {/* Accordion Layout */}
+        {/* Content List Layout */}
         <div className="space-y-4 max-w-3xl mx-auto">
-          {modules.map((mod) => {
-            const isOpen = activeModuleId === mod.id;
-            return (
-              <div
-                key={mod.id}
-                className={`rounded-2xl transition-all duration-300 border ${
-                  isOpen 
-                    ? "bg-slate-950 border-slate-750 shadow-lg" 
-                    : "bg-slate-955/40 border-slate-850 hover:border-slate-800 hover:shadow-md"
-                }`}
-              >
-                <button
-                  onClick={() => handleToggle(mod.id)}
-                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left cursor-pointer focus:outline-none"
-                  id={`module-accordion-button-${mod.id}`}
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
-                    <span className="font-mono text-xs font-extrabold text-pmpi-orange-500 tracking-wider">
-                      {mod.number}
-                    </span>
-                    <h3 className="font-display font-bold text-base sm:text-lg text-white">
-                      {mod.title}
-                    </h3>
-                  </div>
-                  <div className="ml-4 p-1 rounded-full bg-slate-900 text-slate-400 shrink-0">
-                    {isOpen ? (
-                      <Minus className="w-4 h-4" />
-                    ) : (
-                      <Plus className="w-4 h-4" />
-                    )}
-                  </div>
-                </button>
-
-                {/* Animated accordion panel */}
-                {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 pt-1 border-t border-slate-850 animate-fade-in text-slate-100">
-                    <p className="font-sans text-sm text-slate-300 leading-relaxed mb-5">
-                      {mod.description}
-                    </p>
-                    
-                    {/* Topics Sub-list */}
-                    <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-                      <span className="text-[10px] text-slate-200 font-mono font-bold uppercase tracking-wider block mb-3 flex items-center gap-1.5">
-                        <Sparkles className="w-3.5 h-3.5 text-pmpi-orange-500" />
-                        O que você vai dominar neste módulo:
-                      </span>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {mod.topics.map((topic, index) => (
-                          <li key={index} className="flex items-start gap-2.5 text-xs text-slate-350">
-                            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                            <span>{topic}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Resources badge indicators */}
-                    <div className="flex flex-wrap gap-2.5 mt-5 pt-4 border-t border-slate-800 text-[11px] text-slate-400 font-sans">
-                      <span className="flex items-center gap-1 bg-slate-900 px-2.5 py-1 rounded-full border border-slate-850">
-                        <Video className="w-3.5 h-3.5 text-pmpi-orange-500" /> Videoaulas Explicativas
-                      </span>
-                      <span className="flex items-center gap-1 bg-slate-900 px-2.5 py-1 rounded-full border border-slate-850">
-                        <FileText className="w-3.5 h-3.5 text-pmpi-orange-500" /> Esquemas em PDF
-                      </span>
-                    </div>
-                  </div>
-                )}
+          {legislations.map((leg) => (
+            <div
+              key={leg.index}
+              className="rounded-2xl border border-slate-850 bg-slate-950/50 p-5 sm:p-6 hover:border-slate-800 hover:bg-slate-950/80 hover:shadow-lg hover:shadow-slate-950/40 transition-all duration-300 flex items-start gap-4 sm:gap-6 relative group overflow-hidden"
+            >
+              {/* Left subtle accent strip on hover */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pmpi-orange-500 to-pmpi-orange-600 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center" />
+              
+              {/* Big bold number */}
+              <div className="font-mono text-2xl sm:text-3xl font-black text-pmpi-orange-500/20 group-hover:text-pmpi-orange-500/40 transition-colors duration-300 shrink-0 select-none">
+                {leg.index}
               </div>
-            );
-          })}
+
+              {/* Legislation Details */}
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                  <span className="font-mono text-[9px] font-extrabold text-pmpi-orange-500 tracking-wider bg-pmpi-orange-500/10 border border-pmpi-orange-500/20 px-2 py-0.5 rounded uppercase">
+                    {leg.badge}
+                  </span>
+                </div>
+                <h3 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-pmpi-orange-500 transition-colors duration-300 leading-snug">
+                  {leg.title}
+                </h3>
+                <p className="font-sans text-xs sm:text-sm text-slate-400 mt-1.5 leading-relaxed font-medium">
+                  {leg.subtitle}
+                </p>
+              </div>
+
+              {/* Icon Decoration */}
+              <div className="hidden sm:flex self-center p-2.5 rounded-xl bg-slate-900 border border-slate-850 text-slate-400 group-hover:text-pmpi-orange-500 group-hover:border-pmpi-orange-500/30 transition-all duration-300 shrink-0">
+                <Scale className="w-5 h-5" />
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Repeated CTA button */}
