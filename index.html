@@ -1,9 +1,73 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    
+    <!-- JSON.stringify circular reference and React element protection -->
+    <script>
+      (function() {
+        var originalStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          var seen = new WeakSet();
+          return originalStringify(value, function(key, val) {
+            if (val && typeof val === 'object') {
+              if (seen.has(val)) {
+                return '[Circular]';
+              }
+              // Prevent serializing DOM elements or React internal Fiber nodes
+              if (
+                val instanceof HTMLElement || 
+                (val.constructor && (val.constructor.name === 'HTMLButtonElement' || val.constructor.name === 'FiberNode' || val.constructor.name === 'SyntheticBaseEvent')) ||
+                key.startsWith('__react')
+              ) {
+                return '[DOMElement_Or_ReactNode]';
+              }
+              seen.add(val);
+            }
+            if (typeof replacer === 'function') {
+              return replacer(key, val);
+            }
+            return val;
+          }, space);
+        };
+      })();
+    </script>
+    
+    <!-- SEO Meta Tags -->
+    <title>Legislação PMPI Bizurada | Curso de Legislação da PMPI</title>
+    <meta name="description" content="Domine todo o conteúdo programático da Legislação da PMPI com foco 100% em 1.000 questões comentadas e teoria esquematizada pelo Prof. Jonathan Rocha. Sua farda começa aqui." />
+    <meta name="keywords" content="PMPI, Legislação PMPI, concurso PMPI, PM Piauí, Jonathan Rocha, questões comentadas PMPI, estatuto PMPI" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Legislação PMPI Bizurada | Curso de Legislação da PMPI" />
+    <meta property="og:description" content="Domine todo o conteúdo programático da Legislação da PMPI com foco 100% em 1.000 questões comentadas e teoria esquematizada. 100% atualizado pós-edital." />
+    <meta property="og:image" content="https://profjonathanrocha.com.br/wp-content/uploads/2026/02/PMpi-187x300.webp" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Legislação PMPI Bizurada | Curso de Legislação da PMPI" />
+    <meta property="twitter:description" content="Domine todo o conteúdo programático da Legislação da PMPI com foco 100% em 1.000 questões comentadas e teoria esquematizada." />
+    <meta property="twitter:image" content="https://profjonathanrocha.com.br/wp-content/uploads/2026/02/PMpi-187x300.webp" />
+
+    <!-- UTMify & Pixel Scripts -->
+    <script>
+      window.pixelId = "6824be690a5d57fc0d1b7f42";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
   </head>
   <body>
     <div id="root"></div>
