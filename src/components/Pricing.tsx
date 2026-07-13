@@ -34,7 +34,7 @@ export default function Pricing() {
 
   const bonuses = [
     {
-      title: "Apostila de Questões Comentadas",
+      title: "Apostila de 1.000 Questões Comentadas",
       value: "R$ 67,00",
       desc: "Apostila de questões comentadas com todo o conteúdo programático no padrão da banca FCC.",
       icon: ClipboardCheck,

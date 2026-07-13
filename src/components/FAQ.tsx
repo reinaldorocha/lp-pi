@@ -23,7 +23,7 @@ export default function FAQ() {
     {
       id: 4,
       question: "O material está atualizado com as leis recentes?",
-      answer: "Totalmente atualizado. O curso abrange a nova Lei de Organização Básica (LOB - Lei nº 7.725/2022), o Estatuto da PMPI, o Código de Ética (LC nº 28/2003) e as alterações mais recentes de 2026."
+      answer: "Sim, todo o material está totalmente atualizado com todas as alterações até a data atual."
     },
     {
       id: 5,
@@ -33,7 +33,7 @@ export default function FAQ() {
     {
       id: 6,
       question: "Como funciona o suporte para tirar dúvidas?",
-      answer: "Você pode deixar suas dúvidas na área de membros, logo abaixo de cada videoaula. Nossa equipe pedagógica analisa e responde a cada comentário de forma rápida e direta."
+      answer: "Vai tirar dúvidas diretamente com o professor"
     }
   ];
 

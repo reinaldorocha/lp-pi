@@ -17,7 +17,7 @@ export default function Syllabus() {
     },
     {
       index: "03",
-      title: "Constituição do Estado do Piauí (Dispositivos Militares)",
+      title: "Constituição do Estado do Piauí",
       subtitle: "Dispositivos aplicáveis aos Militares do Estado na Carta de 1989",
       badge: "Constitucional Estadual",
     },
