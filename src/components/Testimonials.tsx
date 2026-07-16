@@ -1,38 +1,7 @@
 import React from "react";
-import { Star, ShieldCheck, ArrowRight } from "lucide-react";
+import { ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function Testimonials() {
-  const reviews = [
-    {
-      id: 1,
-      name: "Renato Sousa",
-      role: "Aprovado PMPI / Teresina - PI",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
-      text: "Excelente didática. Eu tinha muita dificuldade em memorizar o Estatuto da PMPI porque a lei de 1981 é super confusa. Os esquemas e mnemônicos do curso abriram minha mente de um jeito único. Fui aprovado!"
-    },
-    {
-      id: 2,
-      name: "Mariana Cavalcante",
-      role: "Classificada PMPI / Picos - PI",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
-      text: "Material extremamente organizado. O cronograma do curso é perfeito para quem trabalha o dia todo e tem poucas horas livres. Você estuda o que realmente cai, sem perder tempo com enrolações."
-    },
-    {
-      id: 3,
-      name: "Jefferson Lima",
-      role: "Concurseiro PMPI / Parnaíba - PI",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80",
-      text: "Finalmente consegui compreender a legislação sem precisar decorar tudo. O professor explica os principais prazos e competências de forma esquematizada. As questões comentadas ajudaram demais!"
-    },
-    {
-      id: 4,
-      name: "Camila Guimarães",
-      role: "Focada em Segurança Pública / Floriano - PI",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80",
-      text: "A nova Lei Orgânica de 2022 e os regulamentos recentes foram o grande diferencial. Outros cursinhos genéricos ignoram estes detalhes e a banca foca justamente neles. Vale cada centavo!"
-    }
-  ];
-
   return (
     <section 
       id="depoimentos"
@@ -49,45 +18,45 @@ export default function Testimonials() {
             Prova social de concurseiros reais
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
-            Veja o depoimento sincero de quem usou o nosso método simplificado para superar o bloqueio com as leis secas e conquistar o diferencial competitivo na prova.
+            Veja os depoimentos de quem usou o nosso método para gabaritar e ser aprovado.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {reviews.map((rev) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              id: 1,
+              url: "https://profjonathanrocha.com.br/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-13-at-21.24.22-1.jpeg",
+              alt: "Depoimento Aluno PMPI 1"
+            },
+            {
+              id: 2,
+              url: "https://profjonathanrocha.com.br/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-13-at-21.24.21.jpeg",
+              alt: "Depoimento Aluno PMPI 2"
+            },
+            {
+              id: 3,
+              url: "https://profjonathanrocha.com.br/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-13-at-21.24.22.jpeg",
+              alt: "Depoimento Aluno PMPI 3"
+            },
+            {
+              id: 4,
+              url: "https://profjonathanrocha.com.br/wp-content/uploads/2025/01/6666666666666DEPOIMENTO299-e1738108765116.png",
+              alt: "Depoimento Aluno PMPI 4"
+            }
+          ].map((img) => (
             <div 
-              key={rev.id}
-              className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-750 shadow-lg transition-all duration-300"
+              key={img.id}
+              className="group bg-slate-900 border border-slate-800 rounded-2xl p-2 overflow-hidden hover:border-pmpi-orange-500/30 hover:scale-[1.02] shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
-              <div>
-                {/* Rating Stars */}
-                <div className="flex items-center gap-1 mb-4 text-pmpi-orange-500">
-                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
-                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
-                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
-                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
-                  <Star className="w-4 h-4 fill-pmpi-orange-500 text-pmpi-orange-500" />
-                </div>
-
-                {/* Text */}
-                <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed italic mb-6">
-                  "{rev.text}"
-                </p>
-              </div>
-
-              {/* User profile details */}
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-800">
+              <div className="relative w-full aspect-[3/4] overflow-hidden rounded-xl bg-slate-950 flex items-center justify-center">
                 <img
-                  className="h-9 w-9 rounded-full object-cover ring-2 ring-slate-800"
-                  src={rev.avatar}
-                  alt={rev.name}
+                  className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-500"
+                  src={img.url}
+                  alt={img.alt}
                   referrerPolicy="no-referrer"
                 />
-                <div>
-                  <h4 className="font-display font-bold text-xs sm:text-sm text-slate-100">{rev.name}</h4>
-                  <p className="text-[10px] text-slate-450 mt-0.5 font-medium">{rev.role}</p>
-                </div>
               </div>
             </div>
           ))}

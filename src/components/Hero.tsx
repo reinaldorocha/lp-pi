@@ -205,7 +205,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
                 <div className="relative rounded-xl bg-slate-950 aspect-[16/10] overflow-hidden border border-slate-850 shadow-inner shadow-pmpi-orange-500/5">
                   <iframe
                     className="absolute inset-0 w-full h-full border-0"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+                    src="https://www.youtube.com/embed/sHsRzxUn3Sk?rel=0&controls=0"
                     title="Vídeo de Apresentação Oficial - PMPI Bizurada"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
