@@ -28,7 +28,7 @@ export default function ForWhom() {
   return (
     <section 
       id="para-quem"
-      className="py-24 bg-slate-950 border-t border-slate-900 relative overflow-hidden text-slate-100"
+      className="py-12 bg-slate-950 border-t border-slate-900 relative overflow-hidden text-slate-100"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

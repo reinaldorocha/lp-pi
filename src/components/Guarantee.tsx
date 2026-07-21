@@ -5,7 +5,7 @@ export default function Guarantee() {
   return (
     <section 
       id="garantia" 
-      className="py-24 bg-slate-900 border-t border-slate-950 relative overflow-hidden text-slate-100"
+      className="py-12 bg-slate-900 border-t border-slate-950 relative overflow-hidden text-slate-100"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

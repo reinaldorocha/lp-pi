@@ -34,7 +34,7 @@ export default function AboutMe() {
   return (
     <section 
       id="quem-sou-eu"
-      className="py-24 bg-slate-900 border-t border-slate-950 relative overflow-hidden text-slate-100"
+      className="py-12 bg-slate-900 border-t border-slate-950 relative overflow-hidden text-slate-100"
     >
       {/* Background accents */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-pmpi-orange-500/5 rounded-full filter blur-3xl pointer-events-none"></div>

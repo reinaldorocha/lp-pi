@@ -62,7 +62,7 @@ export default function Pricing() {
   return (
     <section 
       id="valores"
-      className="py-24 bg-slate-950 border-t border-slate-900 relative overflow-hidden text-slate-100"
+      className="py-12 bg-slate-950 border-t border-slate-900 relative overflow-hidden text-slate-100"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -161,10 +161,10 @@ export default function Pricing() {
                   <div className="space-y-1">
                     <span className="text-[11px] text-slate-500 line-through block font-semibold leading-none">De R$ 197,00 por apenas:</span>
                     <div className="font-display font-black text-2xl sm:text-3xl text-emerald-400 tracking-tight leading-none mb-1">
-                      R$ 97,00 À VISTA
+                      R$ 67,00 À VISTA
                     </div>
                     <div className="text-xs sm:text-sm font-semibold text-slate-350">
-                      ou em <span className="text-pmpi-orange-500 font-bold text-lg">12x de R$ 10,03</span>
+                      ou em <span className="text-pmpi-orange-500 font-bold text-lg">12x de R$ 6,70</span>
                     </div>
                   </div>
                 </div>
