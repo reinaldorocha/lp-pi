@@ -10,7 +10,7 @@ export default function Pricing() {
   const [simulationStep, setSimulationStep] = useState<"form" | "result">("form");
 
   const openCheckout = () => {
-    window.location.href = "https://app.profjonathanrocha.com.br/c/ymnafed";
+    window.location.href = "https://pay.kiwify.com.br/alYf0U9";
   };
 
   const handleCheckoutSubmit = (e: React.FormEvent) => {
